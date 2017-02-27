@@ -1,0 +1,4 @@
+services:
+#    heticus_elections.example:
+#        class: HETIC\USElectionsBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]

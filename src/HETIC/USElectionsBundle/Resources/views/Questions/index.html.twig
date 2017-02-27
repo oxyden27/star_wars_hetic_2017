@@ -1,0 +1,300 @@
+{% extends 'HETICUSElectionsBundle::layout.html.twig' %}
+
+{% block title %}{{parent()}} Questions{% endblock title %}
+
+{% block main %}
+    <section class="starwars-questions">
+       
+        <div class="interface">
+
+            <div class="header_top">
+                <h3 class="titre_princ">Star Wars : Make choices to make the galaxy<br> great again</h3>
+                <div class="audio_control">
+                    <audio id="audio_control" src="{{asset('bundles/heticuselections/music/starwars-acapella.mp3')}}" autoplay>
+                        Votre navigateur ne supporte pas l'élément <code>audio</code>.
+                    </audio>
+                </div>
+            </div>
+
+            <div class="formulaire form_1" style="display:block;">
+                <div class="scene">
+                    <img class="decor" src="{{asset('bundles/heticuselections/img/scene1.png')}}">
+                </div>
+                <h3 class="titre_form">Chapter 1 - Scene 1</h3>
+                <p class="para_form">On Tatooine, the Empire knights organized a blocus around Moseisley so that no travelers can pass. Hopefully, you already were in the city. By passing near the dam, you see a person trying to discreetly pass the blocus. Are you gonna let her
+                    go ? Or alert the soldiers ?
+                </p>
+
+                <div class="zone_alliance">
+                    <img class="logo_alliance" src="{{asset('bundles/heticuselections/img/democrate.png')}}" style="width:85px;">
+                    <p class="question_alliance">Let him enter !</p>
+                    <div style="clear:both"></div>
+                </div>
+
+                <div class="zone_rebelle">
+                    <p class="question_rebelle">Alert the soldiers !</p>
+                    <img class="logo_rebelle" src="{{asset('bundles/heticuselections/img/republic.png')}}" style="width:85px;">
+                    <div style="clear:both"></div>
+                </div>
+
+            </div>
+
+            <div class="formulaire form_2">
+                <div class="scene">
+                    <img class="decor" src="{{asset('bundles/heticuselections/img/scene2.png')}}">
+                </div>
+                <h3 class="titre_form">Chapter 2 - Scene 5</h3>
+                <p class="para_form">You’re in the middle of the cantina with Han Solo for buisness. You see some Empire knights come in, there’re searching for C3PO and R2D2. You know that Han Solo is hidding them on board of the Millenium Falcon. Are you gonna denounce them
+                    ?</p>
+
+                <div class="zone_alliance">
+                    <img class="logo_alliance" src="{{asset('bundles/heticuselections/img/democrate.png')}}" style="width:85px;">
+                    <p class="question_alliance">No I prefer say nothing !</p>
+                    <div style="clear:both"></div>
+                </div>
+
+                <div class="zone_rebelle">
+
+                    <p class="question_rebelle">Yes I’m gonna denounce them !</p>
+                    <img class="logo_rebelle" src="{{asset('bundles/heticuselections/img/republic.png')}}" style="width:85px;">
+                    <div style="clear:both"></div>
+                </div>
+            </div>
+
+            <div class="formulaire form_3">
+                <div class="scene">
+                    <img class="decor" src="{{asset('bundles/heticuselections/img/scene3.png')}}">
+                </div>
+                <h3 class="titre_form">Chapter 4 - Scene 10</h3>
+                <p class="para_form">You’re in Jabba’s landmark with your wife, Leïa , handcuffed close to Jabba. After few minutes, a jabba’s deputy tell you your wife sould be held in leach. Are You gonna accept the fate of your wife ? Or released her by using the force ?
+                </p>
+
+                <div class="zone_alliance">
+                    <img class="logo_alliance" src="{{asset('bundles/heticuselections/img/democrate.png')}}" style="width:85px;">
+                    <p class="question_alliance">No, I immediately released her by using the force !</p>
+                    <div style="clear:both"></div>
+                </div>
+
+                <div class="zone_rebelle">
+
+                    <p class="question_rebelle">Yes, I accept the fate of my wife !</p>
+                    <img class="logo_rebelle" src="{{asset('bundles/heticuselections/img/republic.png')}}" style="width:85px;">
+                    <div style="clear:both"></div>
+                </div>
+            </div>
+
+            <div class="formulaire form_4">
+                <div class="scene">
+                    <img class="decor" src="{{asset('bundles/heticuselections/img/scene4.png')}}">
+                </div>
+                <h3 class="titre_form">Chapter 5 - Scène 8</h3>
+                <p class="para_form">You’re leaving the jedi training center, and decide to shop some groceries this afternoon. Master Obiwan advices you to take your light saber in case. But Master Yoda tell you to not worry and leave it at home. Are you Gonna take it ?
+                </p>
+
+                <div class="zone_alliance">
+                    <img class="logo_alliance" src="{{asset('bundles/heticuselections/img/democrate.png')}}" style="width:85px;">
+                    <p class="question_alliance">No I feel safe , I leave it at home !</p>
+                    <div style="clear:both"></div>
+                </div>
+
+                <div class="zone_rebelle">
+
+                    <p class="question_rebelle">Yes, I take my light saber, that’s better for my proper security !</p>
+                    <img class="logo_rebelle" src="{{asset('bundles/heticuselections/img/republic.png')}}" style="width:85px;">
+                    <div style="clear:both"></div>
+                </div>
+            </div>
+
+            <div class="formulaire form_5">
+                <div class="scene">
+                    <img class="decor" src="{{asset('bundles/heticuselections/img/scene5.png')}}">
+                </div>
+                <h3 class="titre_form">Chapter 7 - Scene 8</h3>
+                <p class="para_form">You’re a doctor, on board of the millennium falcon. Pincess Leïa is pregnant. But after seeing the future of her first child, she hesitates to abort. Are You gonna help her to childbirth ? Or are you gonna split her womb with a light saber
+                    ?
+                </p>
+
+                <div class="zone_alliance">
+                    <img class="logo_alliance" src="{{asset('bundles/heticuselections/img/democrate.png')}}" style="width:85px;">
+                    <p class="question_alliance">I want to help her to childbirth !</p>
+                    <div style="clear:both"></div>
+                </div>
+
+                <div class="zone_rebelle">
+
+                    <p class="question_rebelle">I want to split her womb with a light saber !</p>
+                    <img class="logo_rebelle" src="{{asset('bundles/heticuselections/img/republic.png')}}" style="width:85px;">
+                    <div style="clear:both"></div>
+                </div>
+            </div>
+
+            <div class="formulaire form_6">
+                <div class="scene">
+                    <img class="decor" src="{{asset('bundles/heticuselections/img/scene6.png')}}">
+                </div>
+                <h3 class="titre_form">Chapter 8 - Scene 10</h3>
+                <p class="para_form">You’re approaching Mos Eisley Market in order to get a new droïd. The Empire shops offer goods ones but the Jawas offer you not-regulated ones cheaper.Are you gonna buy the ones from the Empire to make the economy work, or buy the cheapers.</p>
+
+                <div class="zone_alliance">
+                    <img class="logo_alliance" src="{{asset('bundles/heticuselections/img/democrate.png')}}" style="width:85px;">
+                    <p class="question_alliance">No I prefer buy the cheapers ones and save money !</p>
+                    <div style="clear:both"></div>
+                </div>
+
+                <div class="zone_rebelle">
+                    <p class="question_rebelle">I prefer buy the Empire ones and make the economy work !</p>
+                    <img class="logo_rebelle" src="{{asset('bundles/heticuselections/img/republic.png')}}" style="width:85px;">
+                    <div style="clear:both"></div>
+                </div>
+            </div>
+
+            <div class="formulaire form_7">
+                <div class="scene">
+                    <img class="decor" src="{{asset('bundles/heticuselections/img/scene7.png')}}">
+                </div>
+                <h3 class="titre_form">Chapter 11 - Scène 3</h3>
+                <p class="para_form">On Alderaan, the king think that his population is too large and want to sort them by expelling some crews like Dim-U which are a religious order based on the adoration of the mystic Bantha. The king appeals to jedis like you are, to know
+                    if this is a good idea or not.Are you gonna expel them ? Or try to figure it out to let everybody stay ?</p>
+
+                <div class="zone_alliance">
+                    <img class="logo_alliance" src="{{asset('bundles/heticuselections/img/democrate.png')}}" style="width:85px;">
+                    <p class="question_alliance">I prefer figure it out to let everybody stay !</p>
+                    <div style="clear:both"></div>
+                </div>
+
+                <div class="zone_rebelle">
+
+                    <p class="question_rebelle">I prefer expel them to reduce the population ! </p>
+                    <img class="logo_rebelle" src="{{asset('bundles/heticuselections/img/republic.png')}}" style="width:85px;">
+                    <div style="clear:both"></div>
+                </div>
+            </div>
+
+            <div class="formulaire form_8">
+                <div class="scene">
+                    <img class="decor" src="{{asset('bundles/heticuselections/img/scene8.png')}}">
+                </div>
+                <h3 class="titre_form">Chapter 14 - Scene 9</h3>
+                <p class="para_form">Your Brother is a soldier who entrust you the guard and the education of his child, and you will have to choose where he’s gonna study. On Tatooine, there are few schools. Some public ones like Sand Academy, or, some private and luxury ones
+                    like Korriban Sith Academy which allow you to become a great citizen.Where are you gonna sign up for the child ?</p>
+
+                <div class="zone_alliance">
+                    <img class="logo_alliance" src="{{asset('bundles/heticuselections/img/democrate.png')}}" style="width:85px;">
+                    <p class="question_alliance">This child will study in a public school !</p>
+                    <div style="clear:both"></div>
+                </div>
+
+                <div class="zone_rebelle">
+
+                    <p class="question_rebelle">This child will study in a private school !</p>
+                    <img class="logo_rebelle" src="{{asset('bundles/heticuselections/img/republic.png')}}" style="width:85px;">
+                    <div style="clear:both"></div>
+                </div>
+            </div>
+    </section>
+
+    <section class="balanceBox is-Fixed">
+        <div class="meterContainer">
+            <div aria-hidden="true" class="meterBackground">
+                <div aria-hidden="true" class="meterBar">
+                    <label class="progressValue">
+                       <span class="progressNumber"></span>
+                       <meter id='meter' max="1000" value="500" class="leaseMeter"></meter>
+                    </label>
+                    <!--progressValue-->
+                </div>
+                <!--meterBar-->
+            </div>
+            <!--meterBackground-->
+        </div>
+        <!--meterContainer-->
+
+    </section>
+    <!--balanceBox-->
+{% endblock main %}
+
+{% block js_include %}
+    <script type="text/javascript">
+        $(document).ready(function() {
+
+            $(".audio_control").click(function() {
+                var myAudio = document.getElementById("audio_control");
+                if (myAudio.paused) {
+                    myAudio.play();
+                } else {
+                    myAudio.pause();
+                }
+            });
+
+            var i = 2;
+            $(".question_alliance").click(function() {
+                var value_jauge = $("#meter").val();
+                var new_value_jauge = (value_jauge + 62.5);
+                var value_display_jauge = $(".meterBar").width();
+                var new_value_display_jauge = (value_display_jauge + 18.75);
+
+                $("#meter").val(new_value_jauge);
+                $(".meterBar").css("transition", "all 1s ease");
+                $(".meterBar").css("width", new_value_display_jauge + "px");
+
+                $(this).parent().parent().hide("slow");
+                $(".form_" + i).show("slow");
+
+                if ((i == 9) && (value_jauge > 500)) {
+                    window.location.href = "{{path('heticus_elections_result', {'slug' : 'democrate'})}}";
+                }
+
+                if ((i == 9) && (value_jauge < 500)) {
+                    window.location.href = "{{path('heticus_elections_result', {'slug' : 'republican'})}}";
+                }
+
+                i++;
+            });
+
+            $(".question_rebelle").click(function() {
+                var value_jauge = $("#meter").val();
+                var new_value_jauge = (value_jauge - 62.5);
+                var value_display_jauge = $(".meterBar").width();
+                var new_value_display_jauge = (value_display_jauge - 18.75);
+
+                $("#meter").val(new_value_jauge);
+                $(".meterBar").css("transition", "all 1s ease");
+                $(".meterBar").css("width", new_value_display_jauge + "px");
+
+                $(this).parent().parent().hide("slow");
+                $(".form_" + i).show("slow");
+                
+
+                if ((i == 9) && (value_jauge > 500)) {
+                    window.location.href = "{{path('heticus_elections_result', {'slug' : 'democrate'})}}";
+                }
+
+                if ((i == 9) && (value_jauge < 500)) {
+                    window.location.href = "{{path('heticus_elections_result', {'slug' : 'republican'})}}";
+                }
+
+                i++;
+            });
+
+            $(".question_alliance, .question_rebelle").click(function() {
+
+                if ($("#meter").val() < 500) {
+                    $(".progressValue").css("transition", "all 1s ease");
+                    $(".progressValue").css("background-image", "url(bundles/heticuselections/img/republic.png)");
+                }
+
+                if ($("#meter").val() == 500) {
+                    $(".progressValue").css("transition", "all 1s ease");
+                    $(".progressValue").css("background-image", "url(bundles/heticuselections/img/logo_equal.png)");
+                }
+
+                if ($("#meter").val() > 500) {
+                    $(".progressValue").css("transition", "all 1s ease");
+                    $(".progressValue").css("background-image", "url(bundles/heticuselections/img/democrate.png)");
+                }
+
+            });
+
+        });
+    </script>
+{% endblock %}

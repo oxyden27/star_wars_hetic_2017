@@ -1,0 +1,11 @@
+heticus_elections_homepage:
+    path:     /
+    defaults: { _controller: HETICUSElectionsBundle:Home:index }
+
+heticus_elections_question:
+    path:     /questions
+    defaults: { _controller: HETICUSElectionsBundle:Question:index }
+
+heticus_elections_result:
+    path:     /result/{slug}
+    defaults: { _controller: HETICUSElectionsBundle:Result:index }

@@ -1,0 +1,101 @@
+{% extends 'HETICUSElectionsBundle::layout.html.twig' %}
+
+{% block title %}{{parent()}} Résultat{% endblock title %}
+
+{% block main %}
+    <section class="starwars-result">
+       
+                    <audio id="audio_control" src="{{asset('bundles/heticuselections/music/saber.mp3')}}">
+                        Votre navigateur ne supporte pas l'élément <code>audio</code>.
+                    </audio>
+                
+        <div class="result_democrate">
+            <h1 class="title-finish">Your travel is finished... It's time for you to know your side</h1>
+            <h2 class="title-finish">Press the lightsaber to see your result</h2>
+
+            {% if side == "republican" %}
+                <section class="the-demo">
+                    <h3 class="reveal-side" style="color:rgb(229,17,21)">Republican side</h3>
+                    <div class="example-item clearfix">
+                        <div class="lightsaber">
+                           
+                            <label class="height_para" for="vader-example"></label>
+                            <input type="checkbox" id="vader-example">
+                            <div class="switch"></div>
+                            <div class="plasma vader"></div>
+                        </div>
+                    </div>
+
+                    <div class="result_para">
+                        <div class="side_left"><img src="{{asset('bundles/heticuselections/img/trump.png')}}" alt="" class="image-side"></div>
+                        <p class="text-side">You’re a republican who cling to his values and the values of 
+your country. You’re a conservative and you want to make the economy work by giving work to the citizens and expel the others.
+You also think than everyone should take care of his proper security.
+</p>
+                            
+                           
+                    </div>
+                     <div class="zone_partage"><a style="border-color:#E51115;color:#E51115" class="partage" href="#" onclick="displayFBUI('REPUBLIC SIDE', 'https://apps.facebook.com/hetic-uselections', 'https://etud.alexisb.fr/hetic/uselections/web/bundles/heticuselections/img/republic.png', 'Star Wars : Make the galaxy great again', 'Vous allez parcourir la galaxie pour rencontrer de nouvelles personnes et vivre de nouvelles aventures qui vous permettront de connaître votre réel place au sein de la force.', '#HETICSTARWARS', 'test', '#test');">Partager le résultat</a>
+                    </div>
+                    
+                    <div class="zone_partage"><a style="border-color:#3784D6;color:#3784D6" class="partage" href="#" onclick="sendRequestViaMultiFriendSelector(); return false;" value="Send Request To Your Facebook Friends">Inviter des amis à jouer</a></div>
+                    
+                     
+                </section>
+                
+            {% elseif side == "democrate" %}
+                <section class="the-demo">
+                    <h3 class="reveal-side" style="color:rgb(55,132,214)">Democrate side</h3>
+                    <div class="example-item clearfix">
+                        <div class="lightsaber">
+                            <label class="height_para" for="obi-wan-example"></label>
+                            <input type="checkbox" id="obi-wan-example">
+                            <div class="switch"></div>
+                            <div class="plasma obi-wan"></div>
+                        </div>
+                    </div>
+
+                    <div class="result_para">
+                        <div class="side_left"><img src="{{asset('bundles/heticuselections/img/clinton.png')}}" alt="" class="image-side"></div>
+                        <p class="text-side">You’re a democrate who advocates an open world system where 
+everyone would be equal, and you want your country to be a welcoming place. You want to make the economy work by taxing people and especially the richer. Also, Everyone should feel safe without worrying about his own security and without making the law by yourself.
+</p>
+                            
+                             
+                            
+                    </div>
+                    
+                   <div class="zone_partage"><a style="border-color:#3784D6;color:#3784D6" class="partage" href="#" onclick="displayFBUI('DEMOCRATE SIDE', 'https://apps.facebook.com/hetic-uselections', 'https://etud.alexisb.fr/hetic/uselections/web/bundles/heticuselections/img/democrate.png', 'Star Wars : Make the galaxy great again', 'Vous allez parcourir la galaxie pour rencontrer de nouvelles personnes et vivre de nouvelles aventures qui vous permettront de connaître votre réel place au sein de la force.', '#HETICSTARWARS', 'test', '#test');">Partager le résultat</a></div>
+                   
+                   <div class="zone_partage"><a style="border-color:#3784D6;color:#3784D6" class="partage" href="#" onclick="sendRequestViaMultiFriendSelector(); return false;" value="Send Request To Your Facebook Friends">Inviter des amis à jouer</a></div>
+                    
+                </section>
+            {% endif %}
+
+        
+
+        </div>
+    </section>
+{% endblock main %}
+
+{% block js_include %}
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $(".lightsaber").click(function() {
+                 var myAudio = document.getElementById("audio_control");
+                
+                    myAudio.play();
+                
+                $('.title-finish').hide();
+                $(".reveal-side").show("slow");
+                $(".image-side").show("slow");
+                $(".text-side").show("slow");
+                $(".zone_partage").show("slow");
+                $(".result_para").css("transition", "all 1s ease");
+                $(".result_para").css("min-height", "200px");
+                
+            });
+
+        });
+    </script>
+{% endblock %}

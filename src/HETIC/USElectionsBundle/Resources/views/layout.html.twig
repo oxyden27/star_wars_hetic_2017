@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Basic -->
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>{% block title %}US Elections |{% endblock title %}</title>
+
+        <!-- Favicon -->
+        <link rel="shortcut icon" href="{{asset('favicon.ico')}}" type="image/x-icon" />
+        <link rel="apple-touch-icon" href="{{asset('apple-touch-icon.png')}}">
+
+        <!-- Mobile Metas -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+        <!-- Web Fonts  -->
+
+
+        <!-- Vendor CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.css">
+
+        <!-- Theme Custom CSS -->
+        
+        <link rel="stylesheet" href="{{asset('bundles/heticuselections/css/style.css')}}">
+        <link rel="stylesheet" href="{{asset('bundles/heticuselections/css/stars.css')}}">
+        <link rel="stylesheet" href="{{asset('bundles/heticuselections/css/keyframe.css')}}">
+        
+        {% block stylesheets %}{% endblock stylesheets %}
+
+        <!-- Head Libs -->
+
+    </head>
+    <body {% block body_class %}{% endblock %}>
+
+        <script>
+          window.fbAsyncInit = function() {
+            FB.init({
+              appId      : '1703326833294724',
+              xfbml      : true,
+              version    : 'v2.8'
+            });
+
+            function onLogin(response) {
+               if (response.status == 'connected') {
+                 FB.api('/me?fields=first_name', function(data) {
+                   var welcomeBlock = document.getElementById('fb-welcome');
+                   welcomeBlock.innerHTML = 'Hello, ' + data.first_name + '!';
+                 });
+               }
+             }
+
+             FB.getLoginStatus(function(response) {
+               // Check login status on load, and if the user is
+               // already logged in, go directly to the welcome message.
+               if (response.status == 'connected') {
+                 onLogin(response);
+               } else {
+                 // Otherwise, show Login dialog first.
+                 FB.login(function(response) {
+                   onLogin(response);
+                 }, {scope: 'user_friends, email'});
+               }
+             });
+          };
+
+          (function(d, s, id){
+             var js, fjs = d.getElementsByTagName(s)[0];
+             if (d.getElementById(id)) {return;}
+             js = d.createElement(s); js.id = id;
+             js.src = "//connect.facebook.net/en_US/sdk.js";
+             fjs.parentNode.insertBefore(js, fjs);
+           }(document, 'script', 'facebook-jssdk'));
+
+           function displayFBUI(title, linkAttach, imgAttach, subtitleAttach, descAttach, messagePreload, actionName, idObj) {
+               FB.ui({
+                   method: 'feed',
+                   name: title,
+                   link: linkAttach,
+                   picture: imgAttach,
+                   caption: subtitleAttach,
+                   description: descAttach,
+                   message: messagePreload,
+                   actions: {"name": actionName, "link": linkAttach}
+               },
+               function(response) {
+                   if (response && response.post_id) {
+                       // Message posté !
+                       $('#'+idObj).html('<span class="msgPublished">Publié</span>');
+                   }
+               });
+           }
+            
+             function sendRequestToRecipients() {
+    var user_ids = document.getElementsByName("user_ids")[0].value;
+    FB.ui({method: 'apprequests',
+      message: 'Star Wars : Make the galaxy great again',
+      to: user_ids
+    }, requestCallback);
+  }
+
+  function sendRequestViaMultiFriendSelector() {
+    FB.ui({method: 'apprequests',
+      message: 'Star Wars : Make the galaxy great again'
+    }, requestCallback);
+  }
+
+  function requestCallback(response) {
+    // Handle callback here
+  }
+            
+            
+        </script>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div id='stars'></div>
+                    <div id='stars2'></div>
+                    <div id='stars3'></div>
+                    {% block main %}
+                    {% endblock main %}
+                </div>
+            </div>
+        </div>
+
+        <!-- Vendor JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        {% block js_lib %}{% endblock js_lib %}
+
+        <!-- Init JS -->
+        <script src="{{asset('bundles/heticuselections/js/global.js')}}"></script>
+        {% block js_include %}{% endblock js_include %}
+    </body>
+</html>
